@@ -20,6 +20,11 @@ class ScrapIpTek
     @a.user_agent = USER_AGENT
     login = login || LOGIN
 
+    connect_to_intranet(login, password)
+    pry if $debug
+  end
+
+  def connect_to_intranet(login, password)
     puts "Try to login..." if $verbose
     begin
       p = @a.get(URL)
@@ -34,7 +39,6 @@ class ScrapIpTek
       f['password'] = password
     end.submit
     puts "Submited !" if $verbose
-    pry if $debug
   end
 
   # @param target [String] target of your target. By default, use the target specified by @target
