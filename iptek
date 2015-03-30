@@ -2,6 +2,7 @@
 #encoding: utf-8
 
 require 'rubyhelper'
+require 'colorize'
 require_relative 'libIpTek'
 
 $verbose = ARGV.include?('-v')
