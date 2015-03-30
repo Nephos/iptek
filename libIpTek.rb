@@ -36,8 +36,8 @@ class ScrapIpTek
   # @return [Array] array of [String] of ips
   def ips(name = nil)
     @a.get(URL + "user/#{name || @name}")
-    page = @a.page.body
-    return page.match(/10\.41[\d\.]+/).to_a
+    pry if $debug
+    return @a.page.body.match(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/).to_a.uniq
   end
 
   # @param name [String] name of your target. By default, use the target specified by @name
