@@ -1,4 +1,4 @@
-#How to
+# How to
 
 ## Programm
 The programm is an executable.
@@ -16,5 +16,5 @@ ScrapIpTek.new(password, yourlogin, targetlogin).ips # array of string
 ScrapIpTek.new(password, yourlogin, targetlogin).ip # string or null
 ```
 
-#Contributors
+# Contributors
 - poulet_a (Arthur Poulet)
