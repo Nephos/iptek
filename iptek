@@ -67,7 +67,12 @@ $debug = ARGV.include?('-d')
 
 if __FILE__ == $0
   password = ENV['PASSWD'] || get_password
-  s = ScrapIpTek.new(password)
+  begin
+    s = ScrapIpTek.new(password)
+  rescue => e
+    puts e.message.to_s.red
+    exit 1
+  end
   ARGV.each do |name|
     next if name[0] == '-'
     s.name = name
