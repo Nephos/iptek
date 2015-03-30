@@ -7,7 +7,7 @@ You can specify all the logins of your friends on arguments
 
 You can also add -v and -d for more verbose / debug mode
 
-To run it, try the first one ``gem install bundler && bundle install``
+To run it, try the first time ``gem install bundler && bundle install``
 
 
 ## Lib
