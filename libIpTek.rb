@@ -8,12 +8,14 @@ class ScrapIpTek
   USER_AGENT = "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36"
   LOGIN = ENV['USER']
 
-  attr_accessor :name
+  attr_accessor :target
+  alias name target
+  alias name= target=
   # @param password [String] your password (to connect with the intra)
   # @param login [String] your login (to connect with the intra)
-  # @param name [String] name of your target
-  def initialize password, login = nil, name = nil
-    @name = name
+  # @param target [String] target of your target
+  def initialize password, login = nil, target = nil
+    @target = target
     @a = Mechanize.new
     @a.user_agent = USER_AGENT
     login = login || LOGIN
@@ -35,26 +37,26 @@ class ScrapIpTek
     pry if $debug
   end
 
-  # @param name [String] name of your target. By default, use the target specified by @name
+  # @param target [String] target of your target. By default, use the target specified by @target
   # @return [Array] array of [String] of ips
-  def ips(name = nil)
-    @a.get(URL + "user/#{name || @name}")
+  def ips(target = nil)
+    @a.get(URL + "user/#{target || @target}")
     pry if $debug
     return @a.page.body.match(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/).to_a.uniq
   end
 
-  # @param name [String] name of your target. By default, use the target specified by @name
+  # @param target [String] target of your target. By default, use the target specified by @target
   # @return [String or nil] ip or [nil] if no ip
-  def ip(name = nil)
-    return ips(name).first
+  def ip(target = nil)
+    return ips(target).first
   end
 
-  def self.ips password, login, name
+  def self.ips password, login, target
     ScrapIpTek.new(password, login).ips
   end
 
-  def self.ip password, login, name
-    ScrapIpTek.new(password, login, name).ip
+  def self.ip password, login, target
+    ScrapIpTek.new(password, login, target).ip
   end
 
 end

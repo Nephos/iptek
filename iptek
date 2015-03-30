@@ -17,7 +17,7 @@ if __FILE__ == $0
   end
   ARGV.each do |name|
     next if name[0] == '-'
-    s.name = name
-    print s.name.static(18), "=> ", s.ips.join(' --- '), "\n"
+    s.target = name
+    print s.target.static(18), "=> ", s.ips.join(' --- '), "\n"
   end
 end
