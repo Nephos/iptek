@@ -15,3 +15,6 @@ This is also a library. You can use it via :
 ScrapIpTek.new(password, yourlogin, targetlogin).ips # array of string
 ScrapIpTek.new(password, yourlogin, targetlogin).ip # string or null
 ```
+
+#Contributors
+- poulet_a (Arthur Poulet)
