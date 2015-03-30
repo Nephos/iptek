@@ -34,6 +34,7 @@ GEM
       unf_ext
     unf_ext (0.0.6)
     webrobots (0.1.1)
+    yard (0.8.7.6)
 
 PLATFORMS
   ruby
@@ -43,3 +44,4 @@ DEPENDENCIES
   mechanize
   pry
   rubyhelper
+  yard
