@@ -1,5 +1,8 @@
 #encoding: utf-8
 
+require 'pry'
+require 'mechanize'
+
 class ScrapIpTek
   URL = "https://intra.epitech.eu/"
   USER_AGENT = "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36"
